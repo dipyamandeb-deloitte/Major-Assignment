@@ -1,0 +1,26 @@
+create table teamdetails(Sl_No integer, Team_Name varchar(20),Captain varchar(20),Owners varchar(20),
+Homeground varchar(20), primary key (Team_Name))
+
+create table points(team_name varchar(20),No_Of_Wins integer,No_Of_Losses integer,points integer,
+foreign key(team_name) references teamdetails(team_name))
+
+create table fixtures (Match_number integer,Home_Team varchar(20),Away_Team varchar(20),Venue varchar(20),
+	Team_won varchar(20),Team_Lost varchar (20),primary key(Match_Number))
+
+
+FOR VIEWING THE DATA:
+select * from points
+select * from fixtures
+select * from teamdetails
+
+SELECT COUNT(*) FROM teamdetails
+
+SELECT * FROM FIXTURES
+WHERE Home_Team='RCB'
+
+SELECT team_lost,Venue from fixtures
+where Venue='Kolkata'
+
+insert into points values('CSK',9,5,18),
+('SRH',9,5,18),('DC',5,9,10),('KKR',8,6,16),('RR',7,7,14),('RCB',6,8,12),('MI',6,8,12),('PK',6,8,12)
+
